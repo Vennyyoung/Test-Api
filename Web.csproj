@@ -2,11 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-
-  <Target Name="pipelinePreDeployCopyAllFilesToOneFolder">
-    <Message Text="Executing custom target: pipelinePreDeployCopyAllFilesToOneFolder" Importance="high" />
-  </Target>
-
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
