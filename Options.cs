@@ -1,7 +1,11 @@
-﻿namespace Web
+﻿namespace Api
 {
     public class Options
     {
-        public string ApiUrl { get; set; }
+        public string StorageConnectionString { get; set; }
+
+        public string FullImageContainerName { get; set; }
+
+        public string ThumbnailImageContainerName { get; set; }
     }
 }

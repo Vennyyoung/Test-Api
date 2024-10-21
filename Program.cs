@@ -6,9 +6,7 @@ using Microsoft.Extensions.Hosting;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-// Auto deployment test, ignore comment.
-
-namespace Web
+namespace Api
 {
     public class Program
     {
@@ -35,17 +33,16 @@ namespace Web
         {
             services.AddSingleton<Options>(_configuration.Get<Options>());
             services.AddSingleton<HttpClient>(new HttpClient());
-            services.AddRazorPages();
+            services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
-            app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
